@@ -20,12 +20,31 @@ function CalculateAge(){
 
   // now  Calculate the Age 
 
-  const DiffDay = currDay-day;
-  const DiffMonth = currMonth-month;
-  const DiffYear = currYear-year;
+  let DiffDay = currDay-day;
+  let DiffMonth = currMonth-month;
+  let DiffYear = currYear-year;
 
   console.log(`Your Current Age is ${DiffYear} year ${DiffMonth} Month ${DiffDay}`);
 
+  // show calulated age as output
+
+  // Erorr Handling
+
+  if (DiffYear < 0) console.log("invalid date");
+  else if (DiffMonth > 0) {
+      console.log(DiffYear);
+  } else if (DiffMonth === 0 && DiffDay >= 0) {
+      console.log(DiffYear);
+  } else {
+    DiffYear = DiffYear - 1;
+      if (DiffMonth <= 0)
+          if (DiffDay > 0) DiffMonth= 12 + DiffMonth;
+          else DiffMonth = 11 - DiffMonth;
+  }
+  if (DiffDay < 0) {
+    DiffDay = 30 + DiffDay;
+      DiffMonth -= 1;
+  }
   // show calulated age as output
 
   if(DiffYear<0){
@@ -33,7 +52,7 @@ function CalculateAge(){
   }
 
   else{
-    const currentAgeElement = document.getElementById("currentAge");
+    let currentAgeElement = document.getElementById("currentAge");
     currentAgeElement.classList.remove("hidden");
     currentAgeElement.innerHTML = `Your current age is ${DiffYear} years, ${DiffMonth} months, and ${DiffDay} days.`;
 
