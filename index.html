@@ -4,26 +4,30 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css">
     <title>Vite App</title>
   </head>
-  <body>
-    <div id="app">
-      <div class="flex justify-center items-center">
-        <h1>Age Calculator</h1>
-        <div>
-          <label>Enter Your Birth Date</label>
-          <input type="date" name="" id="dateofBirth"/>
+  <body class="bg-slate-500 text-white">
+   
+      <div class="flex justify-center items-center flex-col m-16 md:m-10">
+        <h1 class="text-4xl uppercase font-semibold ">Age Calculator</h1>
+        <div class="flex mt-16">
+        <div class="m-5">
+          <label class="block  mb-3 font-semibold text-xl">Enter Your Birth Date</label>
+          <input type="date" name="" id="dateofBirth" class="text-slate-700 px-10 py-3 cursor-pointer"/>
         </div>
-        <div>
-          <label>Enter Current Date</label>
-          <input type="date" name="" id="currentDate"/>
+        <div class="m-5">
+          <label class="block mb-3 font-semibold text-xl">Enter Current Date</label>
+          <input type="date" name="" id="currentDate " class="text-slate-700 px-10 py-3 cursor-pointer"/>
         </div>
-
       </div>
-
-      <button id="btn">Calculate</button>
+        <button id="btn" class="mt-20 bg-slate-700 px-8 py-3 text-xl rounded-md uppercase">Calculate</button>
+        <div id="currentAge"></div>
+      </div>
+     
       
-    </div>
+      
+   
     <script type="module" src="/main.js">
 
     </script>
